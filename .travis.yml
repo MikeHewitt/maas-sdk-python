@@ -1,0 +1,46 @@
+language: python
+
+sudo: false
+
+branches:
+  except:
+    - release
+
+branches:
+  only:
+    - master
+    - develop
+    - travis
+
+python:
+  - "2.7"
+  - "3.5"
+  - "nightly"
+
+matrix:
+  allow_failures:
+    - python: nightly
+
+addons:
+  apt:
+    packages:
+    - build-essential
+    - python-dev
+    - python3-dev
+    - libssl-dev
+    - libffi-dev
+
+before_install:
+  - if [ -n "$GH_USER" ]; then git config --global github.user ${GH_USER}; fi;
+  - if [ -n "$GH_TOKEN" ]; then git config --global github.token ${GH_TOKEN}; fi;
+
+install:
+  - pip install --upgrade pip
+  - pip install --upgrade pip setuptools
+  - if [ "$TRAVIS_PYTHON_VERSION" = "3.5" ]; then pip install coveralls; fi;
+
+script:
+  - if [ "$TRAVIS_PYTHON_VERSION" = "3.5" ]; then coverage run --source=miracl_api setup.py test; else python setup.py test; fi;
+
+after_success:
+  - if [ "$TRAVIS_PYTHON_VERSION" = "3.5" ]; then coveralls; fi;
