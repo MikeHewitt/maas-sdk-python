@@ -23,6 +23,7 @@ SESSION_MIRACL_USERINFO_KEY = "miracl_userinfo"
 
 
 class MiraclClient(object):
+
     def __init__(self, client_id, secret, redirect_uri,
                  allow_empty_state=True, issuer=_issuer):
         super(MiraclClient, self).__init__()
@@ -255,6 +256,7 @@ class MiraclClient(object):
 
 
 class MiraclError(Exception):
+
     def __init__(self, message, exception=None):
         self.message = message
         self.exception = exception

@@ -19,6 +19,7 @@ def _generate_err_response(error, message=""):
 
 
 class TestBasics(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
         cls.api = miracl_api.MiraclClient("MOCK_CLIENT", "MOCK_SECRET",
@@ -55,6 +56,7 @@ class TestBasics(unittest.TestCase):
 
 
 class TestExpectedFailures(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
         cls.api = miracl_api.MiraclClient("MOCK_CLIENT", "MOCK_SECRET",
@@ -85,6 +87,7 @@ class TestExpectedFailures(unittest.TestCase):
 
 
 class TestUnexpectedFalures(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
         cls.api = miracl_api.MiraclClient("MOCK_CLIENT", "MOCK_SECRET",
