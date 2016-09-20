@@ -38,6 +38,14 @@ For Ubuntu 14.04 the dependencies are:
 
 To run tests, use `python setup.py test`.
 
+## Docker
+
+Configure the sample app with your credentical (see Samples below) then run docker
+
+`docker build --tag=miracl/flasksdk .`
+
+`docker run -d -p 5000:5000 miracl/flasksdk`
+
 # Miracl APIs
 
 ## Details and usage
