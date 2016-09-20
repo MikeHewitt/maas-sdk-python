@@ -102,4 +102,4 @@ if __name__ == "__main__":
     # Set debug flag for Flask app
     app.debug = True
     # and launch it on specified port
-    app.run(port=5000)
+    app.run(host='0.0.0.0',port=5000)
