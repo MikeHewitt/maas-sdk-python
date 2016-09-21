@@ -38,6 +38,7 @@ For Ubuntu 14.04 the dependencies are:
 
 To run tests, use `python setup.py test`.
 
+
 # Miracl APIs
 
 ## Details and usage
@@ -139,3 +140,13 @@ The redirect URI for this sample is `http://127.0.0.1:5000/c2id` if run locally.
 ### Flask
 
 The flask sample app depends on `python-flask`.
+
+## Docker
+
+Configure the sample app with your credentials (see Samples above) then run docker
+
+`docker build --tag=miracl/flasksdk .`
+
+`docker run -d -p 5000:5000 miracl/flasksdk`
+
+Open the app at url `http://127.0.0.1:5000/` 
