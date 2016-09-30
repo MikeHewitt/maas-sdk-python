@@ -81,8 +81,10 @@
             {% endif %}
         </div>
     {% endif %}
+
+<!--Please refer to your distributor-specific documentation to find the correct url for the mpad.js script src-->
     {% if auth_url %}
-        <script src="https://dd.cdn.mpin.io/mpad/mpad.js" data-authurl="{{ auth_url }}" data-element="btmpin"></script>
+        <script src="<<Insert correct mpad url here>>" data-authurl="{{ auth_url }}" data-element="btmpin"></script>
     {% endif %}
 </div>
 </body>
